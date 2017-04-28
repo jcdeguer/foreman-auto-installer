@@ -71,7 +71,9 @@ do
          echo " Demasiado tarde, se esta preparando el sistema, solo resta esperar... "
          echo " Desactivando Firewalld... " && systemctl stop firewalld && systemctl disable firewalld && echo " Firewall desactivado ok." && systemctl status firewalld || echo " Algo salio mal, verifique que paso. "
          sleep 5
-         echo " Desabilitando Selinux... " && cp -p /etc/selinux/config /etc/selinux/config.`date +%s`.bkp && cat /etc/selinux/config | grep -v "SELINUX=" > /etc/selinux/config.new && echo "SELINUX=disabled" >> /etc/selinux/config.new && mv -f /etc/selinux/config.new /etc/selinux/config && echo " Selinux desactivado ok, pressione [ENTER] para continuar..."  && setenforce -1 || echo " Algo salio mal, verifique que paso, pressione [ENTER] para continuar..."
+         echo " Desabilitando Selinux... " && cp -p /etc/selinux/config /etc/selinux/config.`date +%s`.bkp && cat /etc/selinux/config | grep -v "SELINUX=" > /etc/selinux/config.new && echo "SELINUX=disabled" >> /etc/selinux/config.new && mv -f /etc/selinux/config.new /etc/selinux/config && setenforce -1 || echo " Algo salio mal, verifique que paso. "
+         sleep 5
+         echo " Se configurara el aio-max-nr... " && echo "fs.aio-max-nr=33000" >> vim /etc/sysctl.conf && sysctl -p && echo " Se configuro el fs.aio-max-nr en el sysctl, pressione [ENTER] para continuar..." || echo " Algo salio mal, verifique que paso, pressione [ENTER] para continuar..."
          sleep 5
         ;;
         2)

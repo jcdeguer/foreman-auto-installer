@@ -1,0 +1,41 @@
+# 
+# Los parametros detallados aqui, son para ser configurados durante el paso [7] del script para auto instalar Foreman.
+# Se deben remplazar los que estan MAYUSCULA
+# 
+# [02] - Configure certs
+#   [09]. Set country, current value: NOMBRE_DEL_PAIS
+#   [10]. Set state, current value: CIUDAD
+#   [11]. Set city, current value: CIUDAD
+#   [12]. Set org, current value: ORGANIZACION
+#   [13]. Set org_unit, current value: SECTOR_ADMINISTRADOR_SISTEMAS
+#
+# [03] - Configure foreman
+#   [66]. Set admin_password, current value: CLAVE_ADMIN (la clave sera mostrada al final, y servira para ingresar por la interfaz WEB)
+#    67. Set admin_first_name, current value: NOMBRE_ADMINISTRADOR
+#    68. Set admin_last_name, current value: APELLIDO_ADMINISTRADOR
+#    69. Set admin_email, current value: E-MAIL_DEL_ADMINISTRADOR
+#    70. Set initial_organization, current value: NOMBRE_DE_LA_ORGANIZACION
+#    71. Set initial_location, current value: NOMBRE_DEL_DATACENTER
+#
+# [15] - Configure foreman_proxy
+#   [60]. Set tftp, current value: true
+#   [67]. Set tftp_servername, current value: HOSTNAME_DONDE_ESTA_FOREMAN
+#   [68]. Set dhcp, current value: true
+#   [69]. Set dhcp_listen_on, current value: https
+#   [70]. Set dhcp_managed, current value: true
+#   [72]. Set dhcp_subnets, current value: ["IP_DE_RED_PARA_DHCP"]
+#   [73]. Set dhcp_option_domain, current value: ["DOMINIO_DE_RED"]
+#   [75]. Set dhcp_interface, current value: DISPOSITIVO_DE_RED_DEBE_SER_LA_VLAN_PARA_DHCP
+#   [76]. Set dhcp_gateway, current value: DIRECCION_GATEWAY
+#   [77]. Set dhcp_range, current value: IP_INICIAL_POOL_DHCP IP_FINAL_POOL_DHCP
+#   [78]. Set dhcp_nameservers, current value: IP_SERVIDOR_DNS
+#   [80]. Set dhcp_config, current value: /etc/dhcp/dhcpd.conf
+#
+# [19] - Configure katello
+#   [10]. Set proxy_url, current value: URL_DEL_SERVIDOR_PROXY
+#   [11]. Set proxy_port, current value: PUERTO_DEL_SERVIDOR_PROXY
+#
+# [21] - Save and run
+#   [21] - Save and run
+# 
+# Si todo sale bien, deberiamos tener un cartel indicando que esta todo ok, y mostrarnos la clave de admin que seteamos antes.
